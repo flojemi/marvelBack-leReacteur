@@ -1,0 +1,16 @@
+meta {
+  name: Get Characters
+  type: http
+  seq: 1
+}
+
+get {
+  url: http://localhost:3000/marvel/api/characters?skip=200&limit=50
+  body: none
+  auth: none
+}
+
+query {
+  skip: 200
+  limit: 50
+}
