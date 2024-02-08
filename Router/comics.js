@@ -10,7 +10,7 @@ const API_KEY = process.env.REACTEUR_MARVEL_API_KEY;
 // ========================================= \\
 // ========== GET MARVEL COMICS ============ \\
 // ========================================= \\
-router.get("/marvel/api/comics", async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     // Vérifie les informations skip et limit transmises
     const { skip, limit } = req.query;
