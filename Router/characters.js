@@ -39,10 +39,10 @@ router.get("/", async (req, res) => {
   }
 });
 
-// ========================================= \\
-// ======== GET A MARVEL CHARACTER ========= \\
-// ========================================= \\
-router.get("/:id", async (req, res) => {
+// =============================================== \\
+// ======== GET A MARVEL CHARACTER BY ID ========= \\
+// =============================================== \\
+router.get("/byid/:id", async (req, res) => {
   try {
     // Récupérer la paramètre ID
     const { id } = req.params;
@@ -61,6 +61,29 @@ router.get("/:id", async (req, res) => {
     res.status(400).json({
       success: false,
       message: "Can't get the targeted character",
+    });
+  }
+});
+
+// ================================================= \\
+// ======== GET A MARVEL CHARACTER BY NAME ========= \\
+// ================================================= \\
+router.get("/byname/:name", async (req, res) => {
+  try {
+    const { name } = req.params;
+
+    const response = await axios.get(
+      `https://lereacteur-marvel-api.herokuapp.com/characters?name=${name}&apiKey=${API_KEY}`
+    );
+
+    res.status(200).json({
+      success: true,
+      data: response.data,
+    });
+  } catch (error) {
+    res.status(400).json({
+      success: false,
+      message: "No result for this name",
     });
   }
 });
