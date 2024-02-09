@@ -72,8 +72,17 @@ router.get("/byname/:name", async (req, res) => {
   try {
     const { name } = req.params;
 
+    // Vérifie les informations skip et limit transmises
+    const { skip, limit } = req.query;
+    if (Number.isNaN(skip)) throw new Error("Skip must be a number");
+    if (Number.isNaN(limit)) throw new Error("Limit must be a number");
+
+    // Monte les strings pour les greffer à la requête
+    const skipStr = `${skip ? `&skip=${skip}` : ""}`;
+    const limitStr = `${limit ? `&limit=${limit}` : ""}`;
+
     const response = await axios.get(
-      `https://lereacteur-marvel-api.herokuapp.com/characters?name=${name}&apiKey=${API_KEY}`
+      `https://lereacteur-marvel-api.herokuapp.com/characters?name=${name}&apiKey=${API_KEY}${skipStr}${limitStr}`
     );
 
     res.status(200).json({
