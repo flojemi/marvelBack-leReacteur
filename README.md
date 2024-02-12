@@ -28,22 +28,26 @@
 
 ## Feuille de route
 
-|          | Jalons                                                                         | Status |
-| :------- | :----------------------------------------------------------------------------- | :----- |
-| Global   | Initialisation des répertoires back et front                                   | Done   |
-| Global   | Initialisation des repositories Git associés                                   | Done   |
-| Backend  | Création du character router                                                   | Done   |
-| Backend  | Création du comics router                                                      | Done   |
-| Frontend | Création de la page principale liée aux personnages                            | Done   |
-| Frontend | Ajout de la pagination                                                         | Done   |
-| Frontend | Accès à la liste des comics via clique sur un personnage                       | Done   |
-| Frontend | Création de la page comics en s'appuyant sur les composants créés précédemment | Done   |
-| Frontend | Mise en place des barres de recherches                                         | Done   |
-| Frontend | Gestion des favoris à l'aide des cookies                                       | Done   |
-| Frontend | Ajustement du look de l'application                                            | Done   |
-| Global   | Hébergement du back et du front sur Northflank et Netlify                      |        |
-| Backend  | Création de la base de donnée utilisateur MongoDb                              |        |
-| BackEnd  | Création du userRouter                                                         |        |
-| Frontend | Amélioration de la gestion des favoris en bdd                                  |        |
-| Frontend | Rendre responsive                                                              |        |
-| Bonus    | Auto complétion du moteur de recherche                                         |        |
+|              | Jalons                                                             | Status |
+| :----------- | :----------------------------------------------------------------- | :----- |
+| Global       | Initialisation des répertoires locaux et Git                       | Done   |
+| Backend      | Création du character router                                       | Done   |
+| Backend      | Création du comics router                                          | Done   |
+| Frontend     | Création de la page principale liée aux personnages                | Done   |
+| Frontend     | Ajout de la pagination                                             | Done   |
+| Frontend     | Accès à la liste des comics via clique sur un personnage           | Done   |
+| Frontend     | Création de la page comics                                         | Done   |
+| Frontend     | Mise en place des barres de recherches                             | Done   |
+| Frontend     | Gestion des favoris à l'aide des cookies                           | Done   |
+| Frontend     | Construction de la vue Favoris                                     | Done   |
+| Frontend     | Ajustement du look de l'application                                | Done   |
+| Global       | Hébergement du back et du front sur Northflank et Netlify          | Done   |
+| BackEnd      | Création du userRouter                                             | Done   |
+| Frontend     | Mise en place des Login page et signup page                        |        |
+| Frontend     | Amélioration de la gestion des favoris locaux / bdd avec un compte |        |
+| Back & Front | Auto complétion du moteur de recherche                             |        |
+| Frontend     | Rendre responsive                                                  |        |
+
+## A implémenter
+
+- Ajouter la mise à jour de la barre d'url lors des changements de pages et/ou recherches (implique une mise à jour du Backend)
